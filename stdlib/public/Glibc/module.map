@@ -24,108 +24,120 @@ module SwiftGlibc [system] {
 
   // C standard library
   module C {
-    module complex {
-      header "/usr/include/complex.h"
-      export *
-    }
-    module ctype {
-      header "/usr/include/ctype.h"
-      export *
-    }
-    module errno {
-      header "/usr/include/errno.h"
+    // glibc specific
+
+    //module cdefs {
+    //  header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/sys/cdefs.h"
+    //  export *
+    //}
+
+    module "stdc-predef" {
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/stdc-predef.h"
       export *
     }
 
-    // glibc specific
     module features {
-      header "/usr/include/features.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/sys/cdefs.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/features.h"
+      export *
+    }
+
+    module complex {
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/complex.h"
+      export *
+    }
+    module ctype {
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/ctype.h"
+      export *
+    }
+    module errno {
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/errno.h"
       export *
     }
 
     module fenv {
-      header "/usr/include/fenv.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/fenv.h"
       export *
     }
     
     // note: supplied by compiler
     // module float {
-    //   header "/usr/include/float.h"
+    //   header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/float.h"
     //   export *
     // }
     
     module inttypes {
-      header "/usr/include/inttypes.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/inttypes.h"
       export *
     }
     
     // note: potentially supplied by compiler
     // module iso646 {
-    //   header "/usr/include/iso646.h"
+    //   header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/iso646.h"
     //   export *
     // }
     // module limits {
-    //   header "/usr/include/limits.h"
+    //   header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/limits.h"
     //   export *
     // }
     
     module locale {
-      header "/usr/include/locale.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/locale.h"
       export *
     }
     module math {
-      header "/usr/include/math.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/math.h"
       export *
     }
     module setjmp {
-      header "/usr/include/setjmp.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/setjmp.h"
       export *
     }
     module signal {
-      header "/usr/include/signal.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/signal.h"
       export *
     }
 
     // note: supplied by the compiler
     // module stdarg {
-    //   header "/usr/include/stdarg.h"
+    //   header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/stdarg.h"
     //   export *
     // }
     // module stdbool {
-    //   header "/usr/include/stdbool.h"
+    //   header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/stdbool.h"
     //   export *
     // }
     // module stddef {
-    //   header "/usr/include/stddef.h"
+    //   header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/stddef.h"
     //   export *
     // }    
     // module stdint {
-    //   header "/usr/include/stdint.h"
+    //   header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/stdint.h"
     //   export *
     // }
     
     module stdio {
-      header "/usr/include/stdio.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/stdio.h"
       export *
     }
     module stdlib {
-      header "/usr/include/stdlib.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/stdlib.h"
       export *
       export stddef
     }
     module string {
-      header "/usr/include/string.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/string.h"
       export *
     }
 
     // note: supplied by the compiler
     // explicit module tgmath {
-    //   header "/usr/include/tgmath.h"
+    //   header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/tgmath.h"
     //   export *
     // }
     
     module time {
-      header "/usr/include/time.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/time.h"
       export *
     }
   }
@@ -133,132 +145,139 @@ module SwiftGlibc [system] {
   // POSIX
   module POSIX {
     module aio {
-      header "/usr/include/aio.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/aio.h"
       export *
     }
     module arpa {
       module inet {
-        header "/usr/include/arpa/inet.h"
+        header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/arpa/inet.h"
         export *
       }
       export *
     }
     module cpio {
-      header "/usr/include/cpio.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/cpio.h"
       export *
     }
     module dirent {
-      header "/usr/include/dirent.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/dirent.h"
       export *
     }
     module dlfcn {
-      header "/usr/include/dlfcn.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/dlfcn.h"
       export *
     }
     module fcntl {
-      header "/usr/include/fcntl.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/fcntl.h"
       export *
     }
     module fmtmsg {
-      header "/usr/include/fmtmsg.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/fmtmsg.h"
       export *
     }
     module fnmatch {
-      header "/usr/include/fnmatch.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/fnmatch.h"
       export *
     }
     module ftw {
-      header "/usr/include/ftw.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/ftw.h"
       export *
     }
     module glob {
-      header "/usr/include/glob.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/glob.h"
       export *
     }
     module grp {
-      header "/usr/include/grp.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/grp.h"
       export *
     }
     module iconv {
-      header "/usr/include/iconv.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/iconv.h"
       export *
     }
     module ioctl {
-      header "/usr/include/x86_64-linux-gnu/sys/ioctl.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/sys/ioctl.h"
       export *
     }
     module langinfo {
-      header "/usr/include/langinfo.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/langinfo.h"
       export *
     }
     module libgen {
-      header "/usr/include/libgen.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/libgen.h"
       export *
     }
     module monetary {
-      header "/usr/include/monetary.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/monetary.h"
       export *
     }
     module netdb {
-      header "/usr/include/netdb.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/netdb.h"
       export *
     }
     module net {
       module if {
-        header "/usr/include/net/if.h"
+        header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/net/if.h"
         export *
       }
     }
+    module bits {
+      module wordsize {
+        header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/bits/wordsize.h"
+        export *
+      }
+    }
+
     module netinet {
       module in {
-        header "/usr/include/netinet/in.h"
+        header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/netinet/in.h"
         export *
 
-        exclude header "/usr/include/netinet6/in6.h"
+        exclude header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/netinet6/in6.h"
       }
       module tcp {
-        header "/usr/include/netinet/tcp.h"
+        header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/netinet/tcp.h"
         export *
       }
     }
     module nl_types {
-      header "/usr/include/nl_types.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/nl_types.h"
       export *
     }
     module poll {
-      header "/usr/include/poll.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/poll.h"
       export *
     }
     module pthread {
-      header "/usr/include/pthread.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/pthread.h"
       export *
     }
     module pwd {
-      header "/usr/include/pwd.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/pwd.h"
       export *
     }
     module regex {
-      header "/usr/include/regex.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/regex.h"
       export *
     }
     module sched {
-      header "/usr/include/sched.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/sched.h"
       export *
     }
     module search {
-      header "/usr/include/search.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/search.h"
       export *
     }
     module semaphore {
-      header "/usr/include/semaphore.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/semaphore.h"
       export *
     }
     module spawn {
-      header "/usr/include/spawn.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/spawn.h"
       export *
     }
     module strings {
-      header "/usr/include/strings.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/strings.h"
       export *
     }
 
@@ -266,108 +285,108 @@ module SwiftGlibc [system] {
       export *
 
       module ipc {
-        header "/usr/include/x86_64-linux-gnu/sys/ipc.h"
+        header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/sys/ipc.h"
         export *
       }
       module mman {
-        header "/usr/include/x86_64-linux-gnu/sys/mman.h"
+        header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/sys/mman.h"
         export *
       }
       module msg {
-        header "/usr/include/x86_64-linux-gnu/sys/msg.h"
+        header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/sys/msg.h"
         export *
       }
       module resource {
-        header "/usr/include/x86_64-linux-gnu/sys/resource.h"
+        header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/sys/resource.h"
         export *
       }
       module select {
-        header "/usr/include/x86_64-linux-gnu/sys/select.h"
+        header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/sys/select.h"
         export *
       }
       module sem {
-        header "/usr/include/x86_64-linux-gnu/sys/sem.h"
+        header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/sys/sem.h"
         export *
       }
       module shm {
-        header "/usr/include/x86_64-linux-gnu/sys/shm.h"
+        header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/sys/shm.h"
         export *
       }
       module socket {
-        header "/usr/include/x86_64-linux-gnu/sys/socket.h"
+        header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/sys/socket.h"
         export *
       }
       module stat {
-        header "/usr/include/x86_64-linux-gnu/sys/stat.h"
+        header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/sys/stat.h"
         export *
       }
       module statvfs {
-        header "/usr/include/x86_64-linux-gnu/sys/statvfs.h"
+        header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/sys/statvfs.h"
         export *
       }
       module time {
-        header "/usr/include/x86_64-linux-gnu/sys/time.h"
+        header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/sys/time.h"
         export *
       }
       module times {
-        header "/usr/include/x86_64-linux-gnu/sys/times.h"
+        header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/sys/times.h"
         export *
       }
       module types {
-        header "/usr/include/x86_64-linux-gnu/sys/types.h"
+        header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/sys/types.h"
         export *
       }
       module uio {
-        header "/usr/include/x86_64-linux-gnu/sys/uio.h"
+        header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/sys/uio.h"
         export *
       }
       module un {
-        header "/usr/include/x86_64-linux-gnu/sys/un.h"
+        header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/sys/un.h"
         export *
       }
       module utsname {
-        header "/usr/include/x86_64-linux-gnu/sys/utsname.h"
+        header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/sys/utsname.h"
         export *
       }
       module wait {
-        header "/usr/include/x86_64-linux-gnu/sys/wait.h"
+        header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/sys/wait.h"
         export *
       }
     }
     module syslog {
-      header "/usr/include/syslog.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/syslog.h"
       export *
     }
     module tar {
-      header "/usr/include/tar.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/tar.h"
       export *
     }
     module termios {
-      header "/usr/include/termios.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/termios.h"
       export *
     }
     module ulimit {
-      header "/usr/include/ulimit.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/ulimit.h"
       export *
     }
     module unistd {
-      header "/usr/include/unistd.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/unistd.h"
       export *
     }
     module utime {
-      header "/usr/include/utime.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/utime.h"
       export *
     }
     module utmpx {
-      header "/usr/include/utmpx.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/utmpx.h"
       export *
     }
     module wait {
-      header "/usr/include/wait.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/wait.h"
       export *
     }
     module wordexp {
-      header "/usr/include/wordexp.h"
+      header "/nix/store/hd6km3hscbgl2yw8nx7lr5z9s8h89p04-glibc-2.21/include/wordexp.h"
       export *
     }
   }
